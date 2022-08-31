@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ShortcutEventOutput, ShortcutInput } from 'ng-keyboard-shortcuts';
+import {Component} from '@angular/core';
+import {ShortcutEventOutput, ShortcutInput} from 'ng-keyboard-shortcuts';
+import {ShortcutInput as HotkeyInput} from 'ng-hotkeys';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,25 @@ import { ShortcutEventOutput, ShortcutInput } from 'ng-keyboard-shortcuts';
 })
 export class AppComponent {
   shortcuts: ShortcutInput[] = [];
-  controlF = false;
+  hotkeys: HotkeyInput[] = [];
+
+  controlG = false;
+  controlB = false;
 
   ngAfterViewInit(): void {
     this.shortcuts.push({
-      key: 'cmd + f',
+      key: 'cmd + g',
       command: (output: ShortcutEventOutput) => {
         console.log(output);
-        this.controlF = true;
+        this.controlG = true;
+      },
+      preventDefault: true,
+    });
+    this.hotkeys.push({
+      key: 'cmd + b',
+      command: (output: ShortcutEventOutput) => {
+        console.log(output);
+        this.controlB = true;
       },
       preventDefault: true,
     });
