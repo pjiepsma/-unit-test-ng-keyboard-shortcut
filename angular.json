@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sa-planningsassistent": {
+    "hotkeys": {
       "i18n": {
         "sourceLocale": "nl"
       },
@@ -66,10 +66,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "sa-planningsassistent:build:production"
+              "browserTarget": "hotkeys:build:production"
             },
             "development": {
-              "browserTarget": "sa-planningsassistent:build:development"
+              "browserTarget": "hotkeys:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sa-planningsassistent:build"
+            "browserTarget": "hotkeys:build"
           }
         },
         "test": {
@@ -92,11 +92,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "sa-planningsassistent:serve"
+            "devServerTarget": "hotkeys:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sa-planningsassistent:serve:production"
+              "devServerTarget": "hotkeys:serve:production"
             }
           }
         },
@@ -110,13 +110,13 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "sa-planningsassistent:serve",
+            "devServerTarget": "hotkeys:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sa-planningsassistent:serve:production"
+              "devServerTarget": "hotkeys:serve:production"
             }
           }
         },
@@ -129,7 +129,7 @@
       }
     }
   },
-  "defaultProject": "sa-planningsassistent",
+  "defaultProject": "hotkeys",
   "cli": {
     "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
